@@ -6,3 +6,23 @@ runConfig:
   # concurrency: 80
   # cpu: 1
   # memoryMiB: 512
+
+# Build configuration for SvelteKit
+buildConfig:
+  buildCommand: npm run build
+  runtime: nodejs22
+
+# Environment variables and secrets.
+env:
+  # Configure environment variables.
+  # See https://firebase.google.com/docs/app-hosting/configure#user-defined-environment.
+  - variable: MESSAGE
+    value: Hello world!
+    availability:
+      - BUILD
+      - RUNTIME
+
+  # Configure secrets
+  # See https://firebase.google.com/docs/app-hosting/configure#secret-parameters
+  # - variable: API_KEY
+  #   secret: myApiKeySecret
