@@ -7,11 +7,4 @@ npm-debug.log
 .DS_Store
 *.log
 .svelte-kit
-src
-public
-vite.config.ts
-svelte.config.js
-tsconfig.json
-tailwind.config.js
-postcss.config.mjs
-eslint.config.mjs
+build
