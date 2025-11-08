@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+.env
+.env.local
+.DS_Store
+*.log
+.svelte-kit
+src
+public
+vite.config.ts
+svelte.config.js
+tsconfig.json
+tailwind.config.js
+postcss.config.mjs
+eslint.config.mjs

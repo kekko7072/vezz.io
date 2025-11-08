@@ -1,0 +1,8 @@
+{
+  "appHosting": {
+    "backend": {
+      "service": "cloud-run",
+      "source": "."
+    }
+  }
+}
