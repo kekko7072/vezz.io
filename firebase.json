@@ -2,7 +2,8 @@
   "appHosting": {
     "backend": {
       "service": "cloud-run",
-      "source": "."
+      "source": ".",
+      "dockerfile": "Dockerfile"
     }
   }
 }
