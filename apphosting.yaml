@@ -11,6 +11,8 @@ runConfig:
 buildConfig:
   buildCommand: npm run build
   runtime: nodejs22
+  # Use Docker instead of buildpacks
+  dockerfile: Dockerfile
 
 # Environment variables and secrets.
 env:

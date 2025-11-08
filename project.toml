@@ -1,0 +1,7 @@
+[build]
+  [[build.env]]
+    name = "GOOGLE_NODE_RUN_SCRIPTS"
+    value = "build"
+
+[run]
+  command = "node build/server.js"
