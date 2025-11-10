@@ -2,7 +2,7 @@
 	"id": "welcome",
 	"slug": "welcome",
 	"title": "Welcome to vezz.io!",
-	"content": "Hey there! Welcome to my little corner of the internet.\n\nThis is where I share my adventures in coding, building stuff, and occasionally ranting about why my code doesn't work (spoiler: it's usually a typo).\n\nvezz.io stands for \"Input Output from Vezz\" - because I'm constantly learning (input) and creating (output). It's a fun play on words that perfectly describes my journey as a developer.\n\nSo grab a coffee (or tea, I don't judge), and let's build something cool together!",
+	"content": "Hey there! Welcome to my little corner of the internet.\n\nThis is where I share my adventures in coding, building stuff, and occasionally ranting about why my code doesn't work (spoiler: it's usually a typo).\n\nWhile technology and development are a big part of what I do, this blog isn't just about tech. I'll be sharing thoughts on a variety of topics - from projects I'm working on to random musings about life, learning, and everything in between.\n\nvezz.io stands for \"Input Output from Vezz\" - because I'm constantly learning (input) and creating (output). It's a fun play on words that perfectly describes my journey as a developer and beyond.\n\nSo grab a coffee (or tea, I don't judge), and let's explore together!",
 	"excerpt": "Welcome to my personal blog and portfolio - where code meets creativity!",
 	"date": "2024-12-01T00:00:00.000Z",
 	"tags": ["welcome", "introduction"],
