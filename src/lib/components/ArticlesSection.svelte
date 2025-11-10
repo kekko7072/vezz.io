@@ -98,23 +98,6 @@
 		margin-bottom: 5rem;
 	}
 
-	.btn-secondary {
-		padding: 0.75rem 1.5rem;
-		background: transparent;
-		border: 1px solid #d2d2d7;
-		border-radius: 4px;
-		color: #000000;
-		font-weight: 400;
-		cursor: pointer;
-		transition: all 0.2s;
-		font-size: 0.875rem;
-	}
-
-	.btn-secondary:hover {
-		border-color: #0066cc;
-		color: #0066cc;
-	}
-
 	.articles-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -211,6 +194,12 @@
 		margin-top: 1rem;
 		padding-top: 1rem;
 		border-top: 1px solid #f5f5f7;
+	}
+
+	.article-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
 	}
 
 	.article-date {

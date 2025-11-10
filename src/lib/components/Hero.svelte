@@ -25,6 +25,19 @@
 					<span class="site-label">{PERSONAL_INFO.siteName}</span>
 					<span class="fun-fact">{PERSONAL_INFO.siteTagline}</span>
 				</div>
+
+				{#if PERSONAL_INFO.profileImage}
+					<div class="hero-photo">
+						<div class="photo-frame">
+							<img
+								src={PERSONAL_INFO.profileImage.src}
+								alt={PERSONAL_INFO.profileImage.alt}
+								class="profile-image"
+								loading="lazy"
+							/>
+						</div>
+					</div>
+				{/if}
 			</div>
 		</div>
 		
@@ -85,10 +98,14 @@
 
 	.hero-main {
 		display: grid;
-		grid-template-columns: 1fr auto;
-		gap: 4rem;
+		grid-template-columns: minmax(0, 1fr) auto;
+		gap: 3rem;
 		align-items: start;
 		margin-bottom: 4rem;
+	}
+
+	.hero-main > * {
+		min-width: 0;
 	}
 
 	.hero-text {
@@ -126,29 +143,65 @@
 		letter-spacing: 0.01em;
 	}
 
+	.hero-photo {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-top: 1.5rem;
+	}
+
+	.photo-frame {
+		position: relative;
+		width: 220px;
+		height: 220px;
+		border-radius: 32px;
+		overflow: hidden;
+		background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 0, 0, 0.05));
+		box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+		border: 1px solid rgba(0, 102, 204, 0.15);
+	}
+
+	.photo-frame::after {
+		content: '';
+		position: absolute;
+		inset: 12px;
+		border-radius: 24px;
+		border: 1px solid rgba(255, 255, 255, 0.35);
+		pointer-events: none;
+	}
+
+	.profile-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		mix-blend-mode: normal;
+	}
+
 	.hero-aside {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
 		text-align: right;
 		padding-top: 0.5rem;
+		gap: 1.5rem;
 	}
 
 	.site-name {
 		display: flex;
 		flex-direction: column;
-		gap: 0.25rem;
+		gap: 0.35rem;
 	}
 
 	.site-label {
-		font-size: 1.5rem;
+		font-size: 1.75rem;
 		font-weight: 600;
 		color: #0066cc;
 		letter-spacing: -0.01em;
 	}
 
 	.fun-fact {
-		font-size: 0.75rem;
+		font-size: 0.875rem;
 		color: #86868b;
 		font-weight: 400;
 		font-style: italic;
@@ -218,12 +271,13 @@
 	@media (max-width: 968px) {
 		.hero-main {
 			grid-template-columns: 1fr;
-			gap: 2rem;
+			gap: 2.5rem;
 		}
 
 		.hero-aside {
 			align-items: flex-start;
 			text-align: left;
+			gap: 1.25rem;
 		}
 	}
 
@@ -231,6 +285,11 @@
 		.hero {
 			padding: 4rem 1rem;
 			padding-top: 100px;
+		}
+
+		.hero-photo {
+			justify-content: flex-start;
+			margin-top: 0.75rem;
 		}
 
 		.title-line {

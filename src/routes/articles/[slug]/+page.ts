@@ -1,15 +1,22 @@
-import { error } from '@sveltejs/kit';
-import { getArticleBySlug } from '$lib/articles';
-import type { PageLoad } from './$types';
+import { error } from "@sveltejs/kit";
+import { getArticleBySlug } from "$lib/articles";
+import type { PageLoad } from "./$types";
+import { marked } from "marked";
 
-export const load = (({ params }) => {
-	const article = getArticleBySlug(params.slug);
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+});
 
-	if (!article) {
-		throw error(404, 'Article not found');
-	}
+export const load = (async ({ params }) => {
+  const article = getArticleBySlug(params.slug);
 
-	return {
-		article
-	};
+  if (!article) {
+    throw error(404, "Article not found");
+  }
+
+  return {
+    article,
+    contentHtml: await marked.parse(article.content),
+  };
 }) satisfies PageLoad;

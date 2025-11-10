@@ -1,10 +1,11 @@
 {
 	"id": "dart-rl-first-release",
 	"slug": "dart-rl-first-release",
-	"title": "Introducing dart_rl: First Release 🎉",
+	"title": "Introducing DartRL: The first Dart package for Reinforcement Learning",
 	"content": "I'm excited to announce the first release of **dart_rl**, a new Dart package that I've been working on!\n\nThis is the initial version, and I want to be upfront: it's still a work in progress. I'm putting it out there early because I believe in sharing the journey, not just the polished final product.\n\n## What is dart_rl?\n\ndart_rl is a new package for the Dart ecosystem. While it's in its early stages, I'm actively developing and improving it based on feedback and real-world usage.\n\n## Why Release Early?\n\nI've always believed that shipping early and iterating is better than waiting for perfection. This first release represents a starting point, and I'm looking forward to seeing where it goes with community input and continued development.\n\n## Check It Out\n\nYou can find the package on pub.dev:\n\n🔗 **[dart_rl on pub.dev](https://pub.dev/packages/dart_rl)**\n\nFeel free to try it out, share feedback, or contribute! Remember, this is just the beginning - there's much more to come.\n\nStay tuned for updates as I continue to work on and improve dart_rl!",
-	"excerpt": "Announcing the first release of dart_rl - a new Dart package that's still in active development.",
-	"date": "2024-12-15T12:00:00.000Z",
-	"tags": ["dart", "package", "release", "announcement"],
+	"excerpt": "Introducing DartRL: The first Dart package for Reinforcement Learning",
+	"imageUrl": "https://raw.githubusercontent.com/kekko7072/dart_rl/main/dart-rl-logo.png",
+	"date": "2025-11-10T12:00:00.000Z",
+	"tags": ["dart", "package", "release", "announcement", "reinforcement-learning"],
 	"published": true
 }

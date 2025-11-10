@@ -1,29 +1,19 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	import { marked } from 'marked';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	const article = data.article;
+	const { article, contentHtml } = data;
 
 	let articleUrl = '';
-
+	const parsedContent = contentHtml;
 	const getYouTubeId = (url: string): string | null => {
 		if (!url) return null;
 		const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
 		const match = url.match(regExp);
 		return (match && match[2].length === 11) ? match[2] : null;
 	};
-
-	// Configure marked options
-	marked.setOptions({
-		breaks: true,
-		gfm: true
-	});
-
-	// Parse markdown content
-	const parsedContent = marked.parse(article.content);
 
 	onMount(() => {
 		if (browser) {
@@ -215,20 +205,20 @@
 	}
 
 	/* Markdown styles */
-	.markdown p {
+	:global(.markdown p) {
 		margin-bottom: 1.5rem;
 	}
 
-	.markdown p:last-child {
+	:global(.markdown p:last-child) {
 		margin-bottom: 0;
 	}
 
-	.markdown h1,
-	.markdown h2,
-	.markdown h3,
-	.markdown h4,
-	.markdown h5,
-	.markdown h6 {
+	:global(.markdown h1),
+	:global(.markdown h2),
+	:global(.markdown h3),
+	:global(.markdown h4),
+	:global(.markdown h5),
+	:global(.markdown h6) {
 		font-weight: 600;
 		color: #000000;
 		margin-top: 2rem;
@@ -236,51 +226,51 @@
 		line-height: 1.3;
 	}
 
-	.markdown h1 {
+	:global(.markdown h1) {
 		font-size: 2.5rem;
 		margin-top: 0;
 	}
 
-	.markdown h2 {
+	:global(.markdown h2) {
 		font-size: 2rem;
 	}
 
-	.markdown h3 {
+	:global(.markdown h3) {
 		font-size: 1.5rem;
 	}
 
-	.markdown h4 {
+	:global(.markdown h4) {
 		font-size: 1.25rem;
 	}
 
-	.markdown h5 {
+	:global(.markdown h5) {
 		font-size: 1.125rem;
 	}
 
-	.markdown h6 {
+	:global(.markdown h6) {
 		font-size: 1rem;
 	}
 
-	.markdown a {
+	:global(.markdown a) {
 		color: #0066cc;
 		text-decoration: none;
 		transition: opacity 0.2s;
 	}
 
-	.markdown a:hover {
+	:global(.markdown a:hover) {
 		opacity: 0.7;
 		text-decoration: underline;
 	}
 
-	.markdown strong {
+	:global(.markdown strong) {
 		font-weight: 600;
 	}
 
-	.markdown em {
+	:global(.markdown em) {
 		font-style: italic;
 	}
 
-	.markdown code {
+	:global(.markdown code) {
 		font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
 		font-size: 0.9em;
 		background: #f5f5f7;
@@ -289,7 +279,7 @@
 		color: #000000;
 	}
 
-	.markdown pre {
+	:global(.markdown pre) {
 		background: #f5f5f7;
 		border-radius: 8px;
 		padding: 1.5rem;
@@ -298,32 +288,32 @@
 		line-height: 1.5;
 	}
 
-	.markdown pre code {
+	:global(.markdown pre code) {
 		background: transparent;
 		padding: 0;
 		font-size: 0.875rem;
 		color: #000000;
 	}
 
-	.markdown ul,
-	.markdown ol {
+	:global(.markdown ul),
+	:global(.markdown ol) {
 		margin: 1.5rem 0;
 		padding-left: 2rem;
 	}
 
-	.markdown li {
+	:global(.markdown li) {
 		margin-bottom: 0.5rem;
 	}
 
-	.markdown ul li {
+	:global(.markdown ul li) {
 		list-style-type: disc;
 	}
 
-	.markdown ol li {
+	:global(.markdown ol li) {
 		list-style-type: decimal;
 	}
 
-	.markdown blockquote {
+	:global(.markdown blockquote) {
 		border-left: 4px solid #0066cc;
 		padding-left: 1.5rem;
 		margin: 1.5rem 0;
@@ -331,33 +321,33 @@
 		font-style: italic;
 	}
 
-	.markdown hr {
+	:global(.markdown hr) {
 		border: none;
 		border-top: 1px solid #f5f5f7;
 		margin: 2rem 0;
 	}
 
-	.markdown img {
+	:global(.markdown img) {
 		max-width: 100%;
 		height: auto;
 		border-radius: 8px;
 		margin: 1.5rem 0;
 	}
 
-	.markdown table {
+	:global(.markdown table) {
 		width: 100%;
 		border-collapse: collapse;
 		margin: 1.5rem 0;
 	}
 
-	.markdown th,
-	.markdown td {
+	:global(.markdown th),
+	:global(.markdown td) {
 		padding: 0.75rem;
 		border: 1px solid #f5f5f7;
 		text-align: left;
 	}
 
-	.markdown th {
+	:global(.markdown th) {
 		background: #f5f5f7;
 		font-weight: 600;
 	}
