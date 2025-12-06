@@ -13,6 +13,7 @@
 
 <footer class="footer">
 	<p>© {new Date().getFullYear()} Francesco Vezzani. Built with SvelteKit and way too much coffee ☕</p>
+	<p class="logo-credit">Logo Artist Matteo Arzenton + Nano Banana</p>
 </footer>
 
 <style>
@@ -22,5 +23,15 @@
 		color: #000000;
 		font-size: 0.875rem;
 		background: #ffffff;
+	}
+
+	.footer p {
+		margin: 0.5rem 0;
+	}
+
+	.logo-credit {
+		font-size: 0.75rem;
+		color: #666666;
+		margin-top: 1rem;
 	}
 </style>

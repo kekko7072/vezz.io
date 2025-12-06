@@ -327,6 +327,15 @@
 		margin: 2rem 0;
 	}
 
+	:global(.markdown .song-embed) {
+		margin: 1.5rem 0;
+	}
+
+	:global(.markdown .song-embed iframe) {
+		border: none;
+		width: 100%;
+	}
+
 	:global(.markdown img) {
 		max-width: 100%;
 		height: auto;
