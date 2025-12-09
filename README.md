@@ -33,6 +33,15 @@ npm run dev
 
 3. Open [http://localhost:5173](http://localhost:5173) in your browser
 
+### Edit articles locally (WYSIWYG)
+
+- Start the editor-only dev server:
+```bash
+npm run edit
+```
+- Open `/editor` for a WYSIWYG UI that saves back to `src/lib/articles/*.json`
+- The editor API is gated behind `VITE_ENABLE_EDITOR` and is not available in production builds
+
 ## Customization
 
 ### Update Your Information
