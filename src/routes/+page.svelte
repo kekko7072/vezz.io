@@ -2,6 +2,7 @@
 	import Navigation from '$lib/components/Navigation.svelte';
 	import Hero from '$lib/components/Hero.svelte';
 	import ArticlesSection from '$lib/components/ArticlesSection.svelte';
+	import TalksSection from '$lib/components/TalksSection.svelte';
 	import CVSection from '$lib/components/CVSection.svelte';
 </script>
 
@@ -9,6 +10,7 @@
 
 <Hero />
 <ArticlesSection />
+<TalksSection />
 <CVSection />
 
 <footer class="footer">
