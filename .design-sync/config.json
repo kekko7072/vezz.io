@@ -1,0 +1,8 @@
+{
+  "projectId": "7f32e12e-2c0f-4f01-a4a3-e8b5dc3313c4",
+  "pkg": "vezz.io",
+  "globalName": "VezzIo",
+  "mode": "tokens-only",
+  "offScript": true,
+  "note": "vezz.io is a SvelteKit website, not a React component library. This is a hand-authored, brand/tokens-only bundle. Do NOT run package-build.mjs / resync.mjs (there is no React dist to bundle and Svelte components can't load in Claude Design's React runtime). Re-syncs are manual: re-derive tokens from src/lib/constants/design.ts + src/app.css, rebuild ds-bundle/ by hand, then upload. See .design-sync/NOTES.md."
+}
