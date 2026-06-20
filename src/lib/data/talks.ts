@@ -8,6 +8,13 @@ export type Talk = {
 
 export const talks: Talk[] = [
 	{
+		date: 'Feb 13, 2026',
+		topic: 'On-device AI: the hidden OS APIs and how we can use them',
+		location: 'Sanmarco Informatica S.p.A., Provincia di Vicenza, Italy',
+		organization: 'GDG Vicenza',
+		url: 'https://gdg.community.dev/events/details/google-gdg-vicenza-presents-on-device-ai-the-hidden-os-apis-and-how-we-can-use-them/'
+	},
+	{
 		date: 'May 23, 2025',
 		topic: 'AI and New Device Formats - A hands-on guide to the future of AI',
 		location: 'Rovolon (Padua), Italy',

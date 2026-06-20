@@ -1,5 +1,5 @@
 import { error } from "@sveltejs/kit";
-import { getArticleBySlug } from "$lib/articles";
+import { loadArticleBySlug } from "$lib/articles/api";
 import type { PageLoad } from "./$types";
 import { marked } from "marked";
 
@@ -8,8 +8,8 @@ marked.setOptions({
   gfm: true,
 });
 
-export const load = (async ({ params }) => {
-  const article = getArticleBySlug(params.slug);
+export const load = (async ({ params, fetch }) => {
+  const article = await loadArticleBySlug(params.slug, fetch);
 
   if (!article) {
     throw error(404, "Article not found");

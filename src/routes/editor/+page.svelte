@@ -50,7 +50,7 @@
 
 	const applyEditorHtml = async (html: string) => {
 		editorHtml = html;
-		previewHtml = marked.parse(htmlToMarkdown(html));
+		previewHtml = await marked.parse(htmlToMarkdown(html));
 		await tick();
 		if (editorRef) {
 			editorRef.innerHTML = html;
@@ -94,7 +94,7 @@
 			dateInput: toInputDate(article.date)
 		};
 
-		await applyEditorHtml(marked.parse(article.content || ''));
+		await applyEditorHtml(await marked.parse(article.content || ''));
 	};
 
 	const createDraft = async () => {
@@ -122,16 +122,16 @@
 		await applyEditorHtml('<p>Start writing...</p>');
 	};
 
-	const handleEditorInput = () => {
+	const handleEditorInput = async () => {
 		editorHtml = editorRef?.innerHTML ?? '';
-		previewHtml = marked.parse(htmlToMarkdown(editorHtml));
+		previewHtml = await marked.parse(htmlToMarkdown(editorHtml));
 	};
 
 	const exec = (command: string, value?: string) => {
 		if (!editorRef) return;
 		editorRef.focus();
 		document.execCommand(command, false, value);
-		handleEditorInput();
+		void handleEditorInput();
 	};
 
 	const toggleCode = () => {
@@ -143,7 +143,7 @@
 		if (range && text) {
 			range.deleteContents();
 			range.insertNode(document.createTextNode('`' + text + '`'));
-			handleEditorInput();
+			void handleEditorInput();
 		}
 	};
 
@@ -190,7 +190,7 @@
 		const range = selection?.getRangeAt(0);
 		if (range) {
 			range.insertNode(img);
-			handleEditorInput();
+			void handleEditorInput();
 		}
 		closeImagePicker();
 	};

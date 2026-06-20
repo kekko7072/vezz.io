@@ -1,4 +1,21 @@
 {
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ]
+    }
+  ],
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
   "hosting": {
     "public": "build",
     "ignore": [
@@ -7,6 +24,41 @@
       "**/node_modules/**"
     ],
     "rewrites": [
+      {
+        "source": "/rss.xml",
+        "function": {
+          "functionId": "articlesApi",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/feed.xml",
+        "function": {
+          "functionId": "articlesApi",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/api/rss.xml",
+        "function": {
+          "functionId": "articlesApi",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/api/articles",
+        "function": {
+          "functionId": "articlesApi",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/api/articles/**",
+        "function": {
+          "functionId": "articlesApi",
+          "region": "europe-west1"
+        }
+      },
       {
         "source": "**",
         "destination": "/index.html"

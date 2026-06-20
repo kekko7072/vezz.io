@@ -1,13 +1,15 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { loadArticles } from '$lib/articles';
+	import { loadArticleSummaries } from '$lib/articles/api';
 	import { getYouTubeId } from '$lib/utils/youtube';
-	import type { Article } from '$lib/types/article';
+	import type { ArticleSummary } from '$lib/types/article';
 
-	let articles: Article[] = [];
+	let articles: ArticleSummary[] = [];
+	let loading = true;
 
-	onMount(() => {
-		articles = loadArticles();
+	onMount(async () => {
+		articles = await loadArticleSummaries();
+		loading = false;
 	});
 </script>
 
@@ -18,8 +20,13 @@
 			<p class="section-subtitle">Random thoughts, project updates, and things I've learned</p>
 		</div>
 
-		<div class="articles-grid">
-			{#each articles as article}
+		{#if loading}
+			<p class="articles-status">Loading articles...</p>
+		{:else if articles.length === 0}
+			<p class="articles-status">No published articles yet.</p>
+		{:else}
+			<div class="articles-grid">
+				{#each articles as article}
 				<a 
 					href="/articles/{article.slug}"
 					class="article-card"
@@ -62,6 +69,7 @@
 					</a>
 				{/each}
 			</div>
+		{/if}
 	</div>
 </section>
 
@@ -102,6 +110,11 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
 		gap: 4rem 3rem;
+	}
+
+	.articles-status {
+		color: #86868b;
+		font-size: 1.125rem;
 	}
 
 	.article-card {
